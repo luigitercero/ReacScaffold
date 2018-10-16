@@ -1,15 +1,31 @@
 module.exports = {
-    entry:  './src/index.jsx',
+    entry: {
+        app: './src/index.jsx',
+        css: './src/js/app.js',
+
+    },
     output: {
         path: __dirname + "/public/js",
-        filename: 'bundle.js'
+        filename: '[name]Bundle.js'
     },
-    module:{
+    module: {
         rules: [
+            {
+                test: /\.css$/,
+                loader: "style-loader!css-loader"
+            },
             {
                 test: /\.jsx$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/
+            },
+            {
+                test: /\.js$/,
+                loader: "babel-loader",
+                exclude: /node_modules/,
+                query: {
+                    presets: ['es2015']
+                }
             }
         ]
     }

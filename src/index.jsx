@@ -1,8 +1,8 @@
 import React from 'react'
-import {render} from 'react-dom'
+import { render } from 'react-dom'
 import App from './components/App.jsx'
 import firebase from 'firebase'
-
+require('./css/style.css');
 firebase.initializeApp({
     apiKey: "AIzaSyBNTB32pE-4sp7K1O0xV0sbU8ip68X5vdM",
     authDomain: "seudogram-b6c53.firebaseapp.com",
@@ -11,6 +11,6 @@ firebase.initializeApp({
     storageBucket: "seudogram-b6c53.appspot.com",
     messagingSenderId: "540425625946"
 })
-render (
-    <App/>,document.getElementById('app')
+render(
+    <App />, document.getElementById('app')
 );
